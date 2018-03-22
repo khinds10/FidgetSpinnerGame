@@ -144,8 +144,31 @@ Add the following lines
 `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player1.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
 `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player2.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
 
-
 # Supplies Needed
+
+For the below supplies list I went with yellow vs green for team colors, however you can pick, red vs blue etc.
+
+RaspberriPi Zero
+
+![Pi Zero](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/pi-zero.png "Pi Zero")
+
+LED Illuminated Push button Built-in Switch 5V Button (yellow / green)
+
+![Yellow LED Illuminated Button](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/yellow-button.png "Yellow LED Illuminated Button")
+
+![Green LED Illuminated Button](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/green-button.png "Green LED Illuminated Button")
+
+7-segment Display W/i2c Backpack (yellow)
+
+![Yellow Display](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/yellow.jpg "Yellow Display")
+
+7-segment Display W/i2c Backpack (green)
+
+![Green Display](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/green.png "Green Display")
+
+
+# Wiring Diagram
+
 
 
 # Building the Game
