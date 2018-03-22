@@ -30,6 +30,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 Login
 > user: **pi**
+>
 > pass: **raspberry**
 
 Change your account password for security
@@ -144,36 +145,36 @@ Add the following lines
 `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player1.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
 `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player2.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
 
-# Supplies Needed
+### Supplies Needed
 
 For the below supplies list I went with yellow vs green for team colors, however you can pick, red vs blue etc.
 
-RaspberriPi Zero
+**RaspberriPi Zero**
 
 ![Pi Zero](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/pi-zero.png "Pi Zero")
 
-LED Illuminated Push button Built-in Switch 5V Button (yellow / green)
+**LED Illuminated Push button Built-in Switch 5V Button (yellow / green)**
 
 ![Yellow LED Illuminated Button](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/yellow-button.png "Yellow LED Illuminated Button")
 
 ![Green LED Illuminated Button](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/green-button.png "Green LED Illuminated Button")
 
-7-segment Display W/i2c Backpack (yellow)
+**7-segment Display W/i2c Backpack (yellow)**
 
 ![Yellow Display](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/yellow.jpg "Yellow Display")
 
-7-segment Display W/i2c Backpack (green)
+**7-segment Display W/i2c Backpack (green)**
 
 ![Green Display](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/green.png "Green Display")
 
 
-# Wiring Diagram
+### Wiring Diagram
 
 
 
-# Building the Game
+### Building the Game
 
-Paint the board to mount the button, RaspberriPi and alpha displays
+Paint the board to mount the button, RaspberriPi and 7 Seg. Displays
 
 ![Paint Board](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/paint.jpg "Paint Board")
 
@@ -181,7 +182,7 @@ Connect the Displays and buttons accordingly with wired leads
 
 ![Wire Displays & Buttons](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wire-displays.jpg "Wire Displays & Buttons")
 
-Gather Parts to assemble on the board
+Gather Parts to assemble on the board, drill holes where the wires will be feed through below to connect everything
 
 ![Gather Parts](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/gather-parts.jpg "Gather Parts")
 
@@ -194,6 +195,6 @@ Mount/Connect the RaspberriPi to the correct leads
 
 ![Connect RPi](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/connect-pi.jpg "Connect RPi")
 
-# Finished!
+### Finished!
 
 ![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished.jpg "Finished")
