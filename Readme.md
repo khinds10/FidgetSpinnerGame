@@ -152,26 +152,25 @@ Add the following lines
 
 Paint the board to mount the button, RaspberriPi and alpha displays
 
-![Paint Board](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/paint.jpg "Paint Board")
+![Paint Board](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/paint.jpg "Paint Board")
 
 Connect the Displays and buttons accordingly with wired leads
 
-![Wire Displays & Buttons](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/wire-displays.jpg "Wire Displays & Buttons")
+![Wire Displays & Buttons](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wire-displays.jpg "Wire Displays & Buttons")
 
 Gather Parts to assemble on the board
 
-![Gather Parts](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/gather-parts.jpg "Gather Parts")
+![Gather Parts](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/gather-parts.jpg "Gather Parts")
 
 
 Wire the Board from below, feeding the wires through the drilled holes in the board
 
-![Wire the Board](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/wire-board.jpg "Wire the Board")
+![Wire the Board](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wire-board.jpg "Wire the Board")
 
 Mount/Connect the RaspberriPi to the correct leads
 
-![Connect RPi](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/connect-pi.jpg "Connect RPi")
-
+![Connect RPi](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/connect-pi.jpg "Connect RPi")
 
 # Finished!
 
-![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/construction/finished.jpg "Finished")
+![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished.jpg "Finished")
