@@ -9,7 +9,7 @@ Kids love this one, who can spin the longest?  Who can spin the fastest? Find ou
 Download "RASPBIAN JESSIE LITE"
 https://www.raspberrypi.org/downloads/raspbian/
 
-**Create your new hard disk for DashboardPI**
+**Create your new hard disk for Fidget Spinner Game**
 >Insert the microSD to your computer via USB adapter and create the disk image using the `dd` command
 >
 > Locate your inserted microSD card via the `df -h` command, unmount it and create the disk image with the disk copy `dd` command
@@ -143,10 +143,11 @@ Add the following lines to have your raspberrypi automatically connect to your h
 ### Setup the scripts to run at boot
 `crontab -e`
 
-Add the following lines 
+Add the following lines:
 
-`@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player1.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
-`@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player2.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
+> `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player1.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
+> 
+> `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player2.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
 
 ### Supplies Needed
 
