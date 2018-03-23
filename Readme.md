@@ -1,5 +1,8 @@
 # Fidget Spinner Game - Cool Fidget Spinner Game for Sam's Science Fair
-Who an spin the longest?  Who can spin the fastest? Find out!
+Kids love this one, who can spin the longest?  Who can spin the fastest? Find out using this project!
+
+![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished.jpg "Finished")
+![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished2.jpg "Finished")
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
@@ -149,6 +152,10 @@ Add the following lines
 
 For the below supplies list I went with yellow vs green for team colors, however you can pick, red vs blue etc.
 
+**Small thin sheet of plywood**
+
+![Plywood](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/plywood.png "Plywood")
+
 **RaspberriPi Zero**
 
 ![Pi Zero](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/pi-zero.png "Pi Zero")
@@ -167,12 +174,55 @@ For the below supplies list I went with yellow vs green for team colors, however
 
 ![Green Display](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/green.png "Green Display")
 
+## Preparing Hardware
+
+Solder Unique Display Jumpers
+*NOTE: All the I2C backpacks must be soldered on the back of each of the displays, the backpacks come with the display and must all be soldered on first.*
+
+For each of the I2C backpack displays you must solder the jumpers on the back in the **4 different possible combinations** to have your RaspberriPI I2C interface to recognize each display with a **unique address**.  
+
+Leave the first display with no jumper soldered, the 2nd with the farthest right soldered, the 3rd with only the middle soldered and so on...  
+
+*There's a total of 3 pins so you should have a total combination of 8 unique combinations.*
+
+![Solder Unique Display Jumpers](https://raw.githubusercontent.com/khinds10/RetroDashboard/master/construction/displays.jpg "Solder Unique Display Jumpers")
 
 ### Wiring Diagram
 
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/RetroDashboard/master/construction/wiring-diagram.png "Wiring Diagram")
 
+### Test 7 Segment Display I2C Connectivity
+
+Start up your RaspberryPi and make sure the I2C bus recognizes all your connected 7 segment displays. 
+*[each display is given a unique address described above by how you solder each display's jumpers in different combinations]*
+
+If you have all 4 displays with jumpers soldered in all 4 combinations, you should have the following output for the `i2cdetect` command:
+
+`sudo i2cdetect -y 1`
+     
+>    0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+>
+> 00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+> 
+> 70: 70 71 72 73 -- -- -- --
+
+*(in this case all the displays numbered 0 to 4 are being recognized on the PI as I2C available devices)*
 
 ### Building the Game
+
+Using a 3d printer and the provided (.stl) files in the /enclosure folder of this project print the button and display cases and the 6 small squares used to attach to the bottom of the plywood to hold the game board slightly off the table for wiring.
 
 Paint the board to mount the button, RaspberriPi and 7 Seg. Displays
 
@@ -198,3 +248,4 @@ Mount/Connect the RaspberriPi to the correct leads
 ### Finished!
 
 ![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished.jpg "Finished")
+![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished2.jpg "Finished")
