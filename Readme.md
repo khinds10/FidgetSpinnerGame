@@ -1,8 +1,8 @@
 # Fidget Spinner Game - Cool Fidget Spinner Game for Sam's Science Fair
 Kids love this one, who can spin the longest?  Who can spin the fastest? Find out using this project!
 
-![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished.jpg "Finished")
 ![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished2.jpg "Finished")
+![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/master/demo/preview.gif "Finished")
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
@@ -190,7 +190,7 @@ Leave the first display with no jumper soldered, the 2nd with the farthest right
 
 ### Wiring Diagram
 
-![Wiring Diagram](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wiring-diagram.png "Wiring Diagram")
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wiringdiagram.png "Wiring Diagram")
 
 ### Test 7 Segment Display I2C Connectivity
 
