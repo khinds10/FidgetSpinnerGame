@@ -185,11 +185,11 @@ Leave the first display with no jumper soldered, the 2nd with the farthest right
 
 *There's a total of 3 pins so you should have a total combination of 8 unique combinations.*
 
-![Solder Unique Display Jumpers](https://raw.githubusercontent.com/khinds10/RetroDashboard/master/construction/displays.jpg "Solder Unique Display Jumpers")
+![Solder Unique Display Jumpers](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/displays.jpg "Solder Unique Display Jumpers")
 
 ### Wiring Diagram
 
-![Wiring Diagram](https://raw.githubusercontent.com/khinds10/RetroDashboard/master/construction/wiring-diagram.png "Wiring Diagram")
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/wiring-diagram.png "Wiring Diagram")
 
 ### Test 7 Segment Display I2C Connectivity
 
