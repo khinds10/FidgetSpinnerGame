@@ -2,7 +2,6 @@
 Kids love this one, who can spin the longest?  Who can spin the fastest? Find out using this project!
 
 ![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished2.jpg "Finished")
-![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/master/demo/preview.gif "Finished")
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
