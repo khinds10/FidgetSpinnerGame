@@ -1,4 +1,4 @@
-# Fidget Spinner Game - Cool Fidget Spinner Game for Sam's Science Fair
+# Fidget Spinner Game - Cool Fidget Spinner Game for my son's Science Fair
 Kids love this one, who can spin the longest?  Who can spin the fastest? Find out using this project!
 
 ![Finished](https://raw.githubusercontent.com/khinds10/FidgetSpinnerGame/master/construction/finished2.jpg "Finished")
