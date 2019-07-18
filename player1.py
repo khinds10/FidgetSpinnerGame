@@ -1,5 +1,5 @@
 #! /usr/bin/python
-# Player script to listen for button press, then start the timers
+# player script to listen for button press, then start the timer or scoreboard
 # Kevin Hinds http://www.kevinhinds.com
 # License: GPL 2.0
 
@@ -9,18 +9,18 @@ import subprocess
 from gpiozero import Button
 from Adafruit_LED_Backpack import SevenSegment
 
-playerOneMinutes = SevenSegment.SevenSegment(address=0x74)
-playerOneMinutes.begin()
-playerOneMinutes.clear()
-playerOneMinutes.write_display()
+playerMinutes = SevenSegment.SevenSegment(address=0x74)
+playerMinutes.begin()
+playerMinutes.clear()
+playerMinutes.write_display()
 
-playerOneSeconds = SevenSegment.SevenSegment(address=0x70)
-playerOneSeconds.begin()
-playerOneSeconds.clear()
-playerOneSeconds.write_display()
+playerSeconds = SevenSegment.SevenSegment(address=0x70)
+playerSeconds.begin()
+playerSeconds.clear()
+playerSeconds.write_display()
 
-def resetTimer():
-    """setup the display and begin the timer starting from zero """
+def clearDisplay():
+    """setup the display and begin the display starting from zero """
     global minutesOutputPrevious
     global startTime
     global milleseconds
@@ -29,19 +29,19 @@ def resetTimer():
     startTime = 0
     milleseconds = 0
     
-    playerOneMinutes.set_colon(True)
-    playerOneMinutes.write_display()
-    playerOneSeconds.set_colon(True)
-    playerOneSeconds.write_display()
+    playerMinutes.set_colon(True)
+    playerMinutes.write_display()
+    playerSeconds.set_colon(True)
+    playerSeconds.write_display()
 
     zeroChars = [0,0,0,0]
     count = 0
     while (count < 4):
-        playerOneMinutes.set_digit(count, zeroChars[count])
-        playerOneSeconds.set_digit(count, zeroChars[count])
+        playerMinutes.set_digit(count, zeroChars[count])
+        playerSeconds.set_digit(count, zeroChars[count])
         count = count + 1
-    playerOneMinutes.write_display()
-    playerOneSeconds.write_display()
+    playerMinutes.write_display()
+    playerSeconds.write_display()
     
 def runTimer():
     """run the timer showing number of seconds on the 7 segment display"""
@@ -61,9 +61,9 @@ def runTimer():
             count = 0
             minutesOutputChars = list(minutesOutput)
             while (count < 4):
-                playerOneMinutes.set_digit(count, minutesOutput[count])
+                playerMinutes.set_digit(count, minutesOutput[count])
                 count = count + 1
-            playerOneMinutes.write_display()
+            playerMinutes.write_display()
             minutesOutputPrevious = minutesOutput
         
         # keep track of hypothetical milleseconds (they won't be 100% accurate based on script speed)
@@ -76,9 +76,9 @@ def runTimer():
         count = 0
         secondsOutputChars = list(secondsOutput)
         while (count < 4):
-            playerOneSeconds.set_digit(count, secondsOutputChars[count])
+            playerSeconds.set_digit(count, secondsOutputChars[count])
             count = count + 1
-        playerOneSeconds.write_display()
+        playerSeconds.write_display()
 
 timerState = 0
 processId = False
@@ -96,13 +96,36 @@ def timer():
             os.kill(processId, signal.SIGKILL)
     
     if timerState == 2:
-        resetTimer()        
+        clearDisplay()        
     timerState = timerState + 1
     if timerState > 2:
         timerState = 0
 
-button = Button(24)
-resetTimer()
-while True:
-    button.when_pressed = timer
+def setScore(score):
+    """set the score int to the display"""
+    playerSeconds.clear()
+    playerSeconds.print_float(int(score), decimal_digits=0)
+    playerSeconds.write_display()
 
+def score():
+    playerScore = mc.get("PLAYER1")
+    playerScore = playerScore + 1
+    mc.set("PLAYER1", playerScore)
+    setScore(playerScore)
+
+def clear():
+    mc.set("PLAYER1", 0)
+    clearDisplay()
+    
+button = Button(24)
+clearDisplay()
+while True:
+    scoreBoardType = mc.get("TYPE")
+    if (scoreBoardType == "SCORE"):
+        button.when_pressed = score
+        
+    elif (scoreBoardType == "TIMER"):
+        button.when_pressed = timer
+        
+    elif (scoreBoardType == "CLEAR"):
+        button.when_pressed = clear
