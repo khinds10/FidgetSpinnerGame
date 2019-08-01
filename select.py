@@ -18,12 +18,10 @@ displayTwo.begin()
 displayTwo.set_brightness(8)
 displayTwo.clear()
 
-
-
 def displayType(scoreBoardType):
     """set the ALPHNUM to scoreBoardType string value, with some padded spaces"""
     scoreBoardType = str(scoreBoardType)
-    scoreBoardType = "  " + scoreBoardType + " "
+    scoreBoardType = " " + scoreBoardType + "  "
     
     displayOne.clear()
     displayOne.print_str(scoreBoardType[0:4])
@@ -39,10 +37,10 @@ def select():
 
     if (scoreBoardType == "SCORE"):
         scoreBoardType = "TIMER"
-        
+
     elif (scoreBoardType == "TIMER"):
         scoreBoardType = "CLEAR"
-        
+
     elif (scoreBoardType == "CLEAR"):
         scoreBoardType = "SCORE"
 
@@ -52,10 +50,12 @@ def select():
     mc.set("TYPE", scoreBoardType)
     displayType(scoreBoardType)
     
+
 # set up defaults and show on alphanumeric display
 mc.set("TYPE", "SCORE")
 mc.set("PLAYER1", -1)
 mc.set("PLAYER2", -1)
+
 scoreBoardType = mc.get("TYPE")
 displayType(scoreBoardType)
 
