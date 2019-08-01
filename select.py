@@ -2,29 +2,26 @@
 # player script to listen for select score board "type" button press
 # Kevin Hinds http://www.kevinhinds.com
 # License: GPL 2.0
+import sys, time, json, string, cgi, subprocess, json, datetime, memcache
 from gpiozero import Button
 from Adafruit_LED_Backpack import AlphaNum4
-mc = memcache.Client(["127.0.0.1:11211"], debug=0)
+mc = memcache.Client(['127.0.0.1:11211'], debug=0)
 
 # setup the alphanumeric displays
-displayOne = AlphaNum4.AlphaNum4(address=0x78)
+displayOne = AlphaNum4.AlphaNum4(address=0x77)
 displayOne.begin()
+displayOne.set_brightness(8)
 displayOne.clear()
 
-displayTwo = AlphaNum4.AlphaNum4(address=0x77)
+displayTwo = AlphaNum4.AlphaNum4(address=0x76)
 displayTwo.begin()
+displayTwo.set_brightness(8)
 displayTwo.clear()
-
-# set up defaults and show on alphanumeric display
-mc.set("TYPE", "SCORE")
-mc.set("PLAYER1", 0)
-mc.set("PLAYER2", 0)
-scoreBoardType = mc.get("TYPE")
-displayType(scoreBoardType)
 
 def displayType(scoreBoardType):
     """set the ALPHNUM to scoreBoardType string value, with some padded spaces"""
-    scoreBoardType = "  " + scoreBoardType + " "
+    scoreBoardType = str(scoreBoardType)
+    scoreBoardType = " " + scoreBoardType + "  "
     
     displayOne.clear()
     displayOne.print_str(scoreBoardType[0:4])
@@ -40,17 +37,28 @@ def select():
 
     if (scoreBoardType == "SCORE"):
         scoreBoardType = "TIMER"
-        
+
     elif (scoreBoardType == "TIMER"):
         scoreBoardType = "CLEAR"
-        
+
     elif (scoreBoardType == "CLEAR"):
+        scoreBoardType = "SCORE"
+
+    elif (scoreBoardType == "None"):
         scoreBoardType = "SCORE"
 
     mc.set("TYPE", scoreBoardType)
     displayType(scoreBoardType)
     
-button = Button(99)
+    
+# set up defaults and show on alphanumeric display
+mc.set("TYPE", "SCORE")
+mc.set("PLAYER1", 0)
+mc.set("PLAYER2", 0)
+scoreBoardType = mc.get("TYPE")
+displayType(scoreBoardType)
+
+button = Button(17)
 select()
 while True:
     button.when_pressed = select
