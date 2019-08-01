@@ -17,8 +17,8 @@ displayTwo.clear()
 
 # set up defaults and show on alphanumeric display
 mc.set("TYPE", "SCORE")
-mc.set("PLAYER1", 0)
-mc.set("PLAYER2", 0)
+mc.set("PLAYER1", -1)
+mc.set("PLAYER2", -1)
 scoreBoardType = mc.get("TYPE")
 displayType(scoreBoardType)
 

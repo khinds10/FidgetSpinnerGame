@@ -20,7 +20,7 @@ playerSeconds.clear()
 playerSeconds.write_display()
 
 def clearDisplay():
-    """setup the display and begin the display starting from zero """
+    """setup the display and begin the display starting from zero"""
     global minutesOutputPrevious
     global startTime
     global milleseconds
@@ -114,7 +114,7 @@ def score():
     setScore(playerScore)
 
 def clear():
-    mc.set("PLAYER2", 0)
+    mc.set("PLAYER2", -1)
     clearDisplay()
     
 button = Button(24)

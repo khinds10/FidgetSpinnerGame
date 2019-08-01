@@ -96,7 +96,7 @@ Add the following lines to have your raspberrypi automatically connect to your h
 >
 >$ `sudo apt-get upgrade`
 >
->$ `sudo apt-get install vim git python-smbus i2c-tools python-imaging python-smbus build-essential python-dev rpi.gpio python3 python3-pip python-gpiozero python-psutil`
+>$ `sudo apt-get install memcached vim git python-smbus i2c-tools python-imaging python-smbus build-essential python-dev rpi.gpio python3 python3-pip python-memcache python-gpiozero python-psutil`
 
 **Update local timezone settings
 
@@ -144,9 +144,12 @@ Add the following lines to have your raspberrypi automatically connect to your h
 
 Add the following lines:
 
-> `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player1.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
-> 
-> `@reboot /bin/sleep 15; nohup python /home/pi/FidgetSpinnerGame/player2.py > /home/pi/FidgetSpinnerGame/player1.log 2>&1`
+> `@reboot /bin/sleep 20; /usr/bin/python /home/pi/FidgetSpinnerGame/player1.py`
+>
+> `@reboot /bin/sleep 25; /usr/bin/python /home/pi/FidgetSpinnerGame/player2.py`
+>
+> `@reboot /bin/sleep 15; /usr/bin/python /home/pi/FidgetSpinnerGame/select.py`
+>
 
 ### Supplies Needed
 
