@@ -3,11 +3,12 @@
 # Kevin Hinds http://www.kevinhinds.com
 # License: GPL 2.0
 
-import time, datetime
+import time, datetime, sys, json, string, cgi, subprocess, json, datetime, memcache
 import os, signal, atexit, psutil
 import subprocess
 from gpiozero import Button
 from Adafruit_LED_Backpack import SevenSegment
+mc = memcache.Client(['127.0.0.1:11211'], debug=0)
 
 playerMinutes = SevenSegment.SevenSegment(address=0x71)
 playerMinutes.begin()
@@ -104,6 +105,12 @@ def timer():
 def setScore(score):
     """set the score int to the display"""
     playerSeconds.clear()
+    count = 0
+    while (count < 4):
+        playerMinutes.set_digit(count, " ")
+        count = count + 1
+    playerMinutes.set_colon(False)
+    playerMinutes.write_display()    
     playerSeconds.print_float(int(score), decimal_digits=0)
     playerSeconds.write_display()
 
@@ -117,7 +124,7 @@ def clear():
     mc.set("PLAYER2", -1)
     clearDisplay()
     
-button = Button(24)
+button = Button(23)
 clearDisplay()
 while True:
     scoreBoardType = mc.get("TYPE")
